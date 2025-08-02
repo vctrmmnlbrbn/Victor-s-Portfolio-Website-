@@ -1,0 +1,171 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a{
+    display: flex;
+    color: #ffffff;
+    padding: 10px 20px;
+    background-color: rgb(2, 2, 167);
+    border-radius: 25px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F9F9F9;
+  color: #333;
+  padding: 20px;
+}
+
+.myphoto{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;;
+}
+
+.intro-section{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+    padding: 100px;
+}
+.text-content h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  
+  font-weight: bold;
+  color: #000000;
+}
+
+.text-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(2, 2, 167);
+  margin: 0;
+}
+
+.text-content p {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.about h2{
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.skills h2{
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info h2{
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.contact-info h3{
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.contact-info ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer{
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: rgb(219, 219, 219) 1px solid;
+}
+
+footer p {
+    margin-top: 0;
+    color: #000000;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+
+p:not(.exception){
+    text-indent: 2em;
+}
+
+.skills ul li{
+    display: inline-block;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.3rem 0.7rem;
+    margin: 0.2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    list-style: none;
+}
+
+.projects{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project {
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding: 1rem;
+    flex: 1 1 30%;
+    text-align: center;
+    text-decoration:  none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    max-width: 100%;
+    height: 150 px;
+    object-fit: cover   ;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}   
+
+nav ul li a,
+.project {
+  cursor: pointer;
+}
+
+section{
+    margin-top: 1.5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
