@@ -1,8 +1,8 @@
-Victor's Portfolio Website 💼
+## Victor's Portfolio Website 💼
 
 Welcome to my personal portfolio website! This project is built with clean HTML and CSS, designed to be fast, responsive, and easy to navigate. It's where I showcase who I am, what I do, and the projects I've worked on.
 
-🌟 Features
+## 🌟 Features
 
 - Modern, clean UI/UX
 - Responsive layout for all devices
