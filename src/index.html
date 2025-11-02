@@ -3,24 +3,27 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Victor| Web Developer</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <header>
-        <h1>
-            <span>Victor Emmanuel Burbano</span>
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="#homepage">Home</a></li>
-                <li><a href="#aboutpage">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contactinfo">Contacts</a></li>
-            </ul>
-        </nav>
+    <div class="navbar-trigger"></div>
+    <header class="navbar">
+        <div class="mobileBar">
+            <h1>
+                <span>Victor Emmanuel Burbano</span>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#homepage">Home</a></li>
+                    <li><a href="#aboutpage">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contactinfo">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <div class="intro-section" id="homepage">
@@ -29,7 +32,7 @@
             <h1>Hi, I'm Victor</h1>
             <h2>I build websites</h2>
             <p class="exception">I'm a front-end developer specializing in building and creating a responsive,
-            user-friendly websites.</p>
+            user-friendly websites.</p>   
         </div>
     </div>
 
@@ -45,7 +48,7 @@
         <p>Note: These projects are for demonstration purposes only and may not be fully functional</p>
 
         <div class="projects">
-            <a href="" target="_blank" class="project">
+            <a href="https://github.com/vctrmmnlbrbn/Victor-s-Portfolio-Website-.git" target="_blank" class="project">
                 <img src="Pictures/proj1.png" alt="Project One" class="project-image" />
                 <h4>Project One</h4>
                 <p>A brief description of the project.</p>
@@ -93,6 +96,69 @@
     </section>
     <div class="footer">
         <p>&copy; 2025 Victor Emmanuel Burbano. All rights reserved.</p>
+    </div>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const navbarTrigger = document.querySelector('.navbar-trigger');
+        let hideTimeout;
+        let isScrolling = false;
+        
+        // Function to show navbar
+        function showNavbar() {
+            navbar.classList.remove('hidden');
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+            }
+        }
+
+        // Function to hide navbar
+        function hideNavbar() {
+            if (!isScrolling && window.pageYOffset > 100) {
+                navbar.classList.add('hidden');
+            }
+        }
+
+        // Show/hide navbar on scroll
+        window.addEventListener('scroll', () => {
+            isScrolling = true;
+            showNavbar();
+            
+            // Clear the existing timeout
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+            }
+            
+            // Set a timeout to hide the navbar after scrolling stops
+            hideTimeout = setTimeout(() => {
+                isScrolling = false;
+                if (window.pageYOffset > 100) {
+                    hideNavbar();
+                }
+            }, 2000); // Will hide after 2 seconds of no scrolling
+        });
+
+        // Show navbar when hovering over trigger area
+        navbarTrigger.addEventListener('mouseenter', () => {
+            if (window.pageYOffset > 100) {
+                showNavbar();
+            }
+        });
+
+        // Hide navbar when mouse leaves navbar area (if scrolled down)
+        navbar.addEventListener('mouseleave', (e) => {
+            if (window.pageYOffset > 100 && !isScrolling) {
+                hideTimeout = setTimeout(hideNavbar, 1000); // Will hide after 1 second
+            }
+        });
+
+        // Keep navbar visible while hovering over it
+        navbar.addEventListener('mouseenter', () => {
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+            }
+        });
+    </script>
 </body>
 
 </html>
