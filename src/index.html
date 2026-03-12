@@ -821,7 +821,7 @@
 
             <button type="button" class="project-card" data-project
                 data-title="Portfolio Website"
-                data-desc="My personal portfolio website showcasing my skills and projects as a front-end developer."
+                data-desc="My personal portfolio website showcasing my skills and projects as a front-end developer. <a href='https://github.com/vctrmmnlbrbn/Victor-s-Portfolio-Website-' class='project-link' target='_blank'>See more...</a>"
                 data-img="Pictures/proj1.png"
                 data-link="https://github.com/vctrmmnlbrbn/Victor-s-Portfolio-Website-.git"
                 data-link-label="View Project"
@@ -835,9 +835,7 @@
                 <div class="project-body">
                     <p class="project-num">project_01</p>
                     <h4 class="project-title">Portfolio Website</h4>
-                    <p class="project-desc">My personal portfolio website showcasing my skills and projects as a front-end developer.
-                        <a href="https://github.com/vctrmmnlbrbn/Victor-s-Portfolio-Website-" class="project-link">See more...</a>
-                    </p>
+                    <p class="project-desc">My personal portfolio website showcasing my skills and projects as a front-end developer.</p>
                     <div class="project-link">
                         Open details
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -847,7 +845,7 @@
 
             <button type="button" class="project-card" data-project
                 data-title="Project Two"
-                data-desc="A brief description of what this project does and the technologies used to build it."
+                data-desc="A brief description of what this project does and the technologies used to build it. <a href='https://github.com/vctrmmnlbrbn/myCoffeeTemplate' class='project-link' target='_blank'>See more...</a>"
                 data-img="Pictures/kopiko.jpg"
                 data-link="https://vctrmmnlbrbn.github.io/myCoffeeTemplate/"
                 data-link-label="View Project"
@@ -861,9 +859,7 @@
                 <div class="project-body">
                     <p class="project-num">project_02</p>
                     <h4 class="project-title">Project My Coffee Template</h4>
-                    <p class="project-desc">I made this project as a showcase template for a coffee shop.
-                        <a href="https://github.com/vctrmmnlbrbn/myCoffeeTemplate" class="project-link">See more...</a>
-                    </p>
+                    <p class="project-desc">I made this project as a showcase template for a coffee shop.</p>
                     <div class="project-link">
                         Open details
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -873,7 +869,7 @@
 
             <button type="button" class="project-card" data-project
                 data-title="Project Three"
-                data-desc="A brief description of what this project does and the technologies used to build it."
+                data-desc="A brief description of what this project does and the technologies used to build it. <a href='https://github.com/vctrmmnlbrbn/04LabExe1AResponsiveWebsite' class='project-link' target='_blank'>See more...</a>"
                 data-img="Pictures/hamster.jpg"
                 data-link="https://vctrmmnlbrbn.github.io/04LabExe1AResponsiveWebsite/04LabExe1/main/04LabExe1.html"
                 data-link-label="View Project"
@@ -887,9 +883,7 @@
                 <div class="project-body">
                     <p class="project-num">project_03</p>
                     <h4 class="project-title">Project Three</h4>
-                    <p class="project-desc">This is a troll project based from my subject's Lab Exercise
-                        <a href="https://github.com/vctrmmnlbrbn/04LabExe1AResponsiveWebsite" class="project-link">See more...</a>
-                    </p>
+                    <p class="project-desc">This is a troll project based from my subject's Lab Exercise</p>
                     <div class="project-link">
                         Open details
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1050,7 +1044,7 @@
                 const linkLabel = card.dataset.linkLabel || 'Open project';
 
                 modalTitle.textContent = title;
-                modalDesc.textContent = desc;
+                modalDesc.innerHTML = desc;
 
                 if (img) {
                     modalImage.src = img;
