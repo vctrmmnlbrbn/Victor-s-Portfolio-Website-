@@ -248,6 +248,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 400;
+            cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
 
         }
@@ -604,14 +605,163 @@
             color: #94a3b8;
             line-height: 1.8;
             text-indent: 0 !important;
+            grid-column: 1;
+        }
+        .contact-form {
+            display: grid;
+            gap: 14px;
+            padding: 22px;
+            background: linear-gradient(180deg, rgba(26, 34, 48, 0.92), rgba(14, 19, 24, 0.92));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+            grid-column: 1;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .contact-field {
+            display: grid;
+            gap: 8px;
+        }
+        .contact-field label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .contact-field input,
+        .contact-field textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg3);
+            color: var(--text);
+            font: inherit;
+            transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+        }
+        .contact-field input::placeholder,
+        .contact-field textarea::placeholder {
+            color: #64748b;
+        }
+        .contact-field input:focus,
+        .contact-field textarea:focus {
+            outline: none;
+            border-color: rgba(56, 189, 248, 0.55);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+            background: #111827;
+        }
+        .contact-field textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+        .contact-form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+        }
+        .contact-status {
+            min-height: 1.2em;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--accent);
+            text-indent: 0 !important;
+        }
+        .contact-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .contact-modal.open {
+            display: flex;
+        }
+        .contact-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+        .contact-modal-content {
+            position: relative;
+            z-index: 1;
+            width: min(640px, 100%);
+            padding: 24px;
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.98), rgba(12, 17, 24, 0.98));
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+            animation: modalIn 0.35s ease;
+        }
+        .contact-modal-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .contact-modal-label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 8px;
+        }
+        .contact-modal-title {
+            font-family: var(--font-head);
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            color: var(--white);
+            letter-spacing: -0.03em;
+        }
+        .contact-modal-close {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg3);
+            color: var(--text);
+            cursor: pointer;
+            font: inherit;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .contact-modal-close:hover {
+            background: var(--surface);
+            border-color: rgba(56, 189, 248, 0.35);
+            transform: translateY(-1px);
+        }
+        .contact-modal-content .contact-form {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            padding: 0;
         }
         .contact-links {
             display: flex;
             flex-direction: column;
             gap: 14px;
+            grid-column: 2;
+            grid-row: 1 / span 2;
         }
         .contact-link-item {
-            display: flex; align-items: center; gap: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            text-align: left;
+            font: inherit;
+            cursor: pointer;
             text-decoration: none;
             padding: 16px 20px;
             background: var(--bg3);
@@ -619,7 +769,6 @@
             border-radius: 10px;
             color: var(--text);
             transition: border-color 0.3s, background 0.3s, transform 0.2s;
-
         }
         .contact-link-item:hover {
             border-color: rgba(56,189,248,0.4);
@@ -697,6 +846,12 @@
             section { padding: 80px 24px; }
             #aboutpage .about-grid { grid-template-columns: 1fr; gap: 40px; }
             #contactinfo .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+            #contactinfo .contact-intro,
+            #contactinfo .contact-form,
+            #contactinfo .contact-links {
+                grid-column: auto;
+                grid-row: auto;
+            }
             .project-modal-body { grid-template-columns: 1fr; }
             .footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px; }
         }
@@ -705,6 +860,8 @@
             nav ul li a { padding: 7px 10px; font-size: 0.72rem; }
             .about-stats { grid-template-columns: 1fr 1fr; }
             .projects-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-modal-content { padding: 18px; }
         }
     </style>
 </head>
@@ -735,10 +892,10 @@
                 </div>
             </div>
             <div class="hero-text">
-                <p class="hero-tag">Front-End Developer</p>
+                <p class="hero-tag">Web and App Developer</p>
                 <h1 class="hero-name">Hi, I'm <span class="highlight">Victor</span></h1>
-                <p class="hero-role">I love to build websites</p>
-                <p class="hero-desc">I'm a front-end developer specializing in building responsive, user-friendly websites. Passionate about clean code and beautiful interfaces.</p>
+                <p class="hero-role">I build for web and mobile</p>
+                <p class="hero-desc">I'm a web and app developer who enjoys creating responsive, user-friendly experiences. I've built Talkaroo, a school-focused app for English vocabulary learning and speech evaluation with Azure AI Speech.</p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn-primary">View Projects</a>
                     <a href="#contactinfo" class="btn-outline">Get In Touch</a>
@@ -755,9 +912,9 @@
         <h2 class="section-title">A little about me</h2>
         <div class="about-grid">
             <div>
-                <p>I'm an aspiring web developer with a passion for creating responsive, and user-friendly websites. Currently learning HTML and CSS, and soon diving into JavaScript to bring more interactivity to my work.</p>
+                <p>I'm a web and app developer interested in building useful, easy-to-use digital experiences across web and mobile. My projects include Talkaroo, a school-focused app that supports English vocabulary learning and speech evaluation using Azure AI Speech.</p>
                 <br>
-                <p>I believe great websites are built at the intersection of clean code and thoughtful design. Every project is an opportunity to learn something new and push my skills further.</p>
+                <p>I work with technologies including HTML, CSS, JavaScript, TypeScript, React, and Flutter, and I'm always learning new ways to turn ideas into thoughtful, accessible products.</p>
             </div>
             <div class="about-stats">
                 <div class="stat-card">
@@ -765,8 +922,8 @@
                     <div class="label">Years learning</div>
                 </div>
                 <div class="stat-card">
-                    <div class="num">5</div>
-                    <div class="label">Skills mastered</div>
+                    <div class="num">8</div>
+                    <div class="label">Technologies</div>
                 </div>
                 <div class="stat-card">
                     <div class="num">3+</div>
@@ -807,6 +964,18 @@
                 <div class="skill-icon">C#</div>
                 <span class="skill-name">C Sharp</span>
             </div>
+            <div class="skill-item">
+                <div class="skill-icon">TS</div>
+                <span class="skill-name">TypeScript</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon">RE</div>
+                <span class="skill-name">React</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon">FL</div>
+                <span class="skill-name">Flutter</span>
+            </div>
         </div>
     </section>
 
@@ -816,26 +985,25 @@
     <section id="projects" class="reveal">
         <p class="section-label">03 — Projects</p>
         <h2 class="section-title">Things I've built</h2>
-        <p class="projects-note">// These projects are for demonstration purposes and may not be fully functional</p>
         <div class="projects-grid">
 
             <button type="button" class="project-card" data-project
-                data-title="Portfolio Website"
-                data-desc="My personal portfolio website showcasing my skills and projects as a front-end developer. <a href='https://github.com/vctrmmnlbrbn/Victor-s-Portfolio-Website-' class='project-link' target='_blank'>See more...</a>"
-                data-img="Pictures/proj1.png"
-                data-link="https://github.com/vctrmmnlbrbn/Victor-s-Portfolio-Website-.git"
+                data-title="Talkaroo"
+                data-desc="A school-focused app for English vocabulary learning and speech evaluation. It uses Azure AI Speech / ASR and visual learning to help learners recognize real-world objects."
+                data-img="Pictures/Talkaroo.png"
+                data-link="https://talkaroo.me"
                 data-link-label="View Project"
-                aria-label="Open details for Portfolio Website">
+                aria-label="Open details for Talkaroo">
                 <div class="project-img-wrap">
-                    <img src="Pictures/proj1.png" alt="Portfolio Website" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <img src="Pictures/Talkaroo.png" alt="Talkaroo app" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                     <div class="project-placeholder" style="display:none">
                         <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
                     </div>
                 </div>
                 <div class="project-body">
                     <p class="project-num">project_01</p>
-                    <h4 class="project-title">Portfolio Website</h4>
-                    <p class="project-desc">My personal portfolio website showcasing my skills and projects as a front-end developer.</p>
+                    <h4 class="project-title">Talkaroo</h4>
+                    <p class="project-desc">A school-focused app for English vocabulary learning and speech evaluation using Azure AI Speech / ASR.</p>
                     <div class="project-link">
                         Open details
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -868,21 +1036,21 @@
             </button>
 
             <button type="button" class="project-card" data-project
-                data-title="Project Three"
+                data-title="Valentine Proposal"
                 data-desc="A brief description of what this project does and the technologies used to build it. <a href='https://github.com/vctrmmnlbrbn/valentine-proposal' class='project-link' target='_blank'>See more...</a>"
                 data-img="Pictures/valentine.png"
                 data-link="https://vctrmmnlbrbn.github.io/valentine-proposal/"
                 data-link-label="View Project"
-                aria-label="Open details for Project Three">
+                aria-label="Open details for Valentine Proposal">
                 <div class="project-img-wrap">
-                    <img src="Pictures/valentine.png" alt="Project Three" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <img src="Pictures/valentine.png" alt="Valentine Proposal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                     <div class="project-placeholder" style="display:none">
                         <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
                     </div>
                 </div>
                 <div class="project-body">
                     <p class="project-num">project_03</p>
-                    <h4 class="project-title">Project Three</h4>
+                    <h4 class="project-title">Valentine Proposal</h4>
                     <p class="project-desc">This is a troll project based from my subject's Lab Exercise</p>
                     <div class="project-link">
                         Open details
@@ -928,27 +1096,28 @@
         <h2 class="section-title">Let's work together</h2>
         <div class="contact-wrapper">
             <p class="contact-intro">I'm currently open to new opportunities and collaborations. Whether you have a project in mind, a question, or just want to say hi — my inbox is always open.</p>
+            
             <div class="contact-links">
 
-                <a href="/cdn-cgi/l/email-protection#afd9c6ccdbc0ddcac2c2cec1dacac3cddaddcdcec1c0efc8c2cec6c381ccc0c2" class="contact-link-item">
+                <button type="button" class="contact-link-item" data-contact-recipient="victoremmanuelburbano@gmail.com" data-contact-label="Gmail" aria-label="Open Gmail contact form">
                     <div class="contact-icon">
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </div>
                     <div class="contact-detail">
                         <strong>Gmail</strong>
-                        <span><span class="__cf_email__" data-cfemail="90e6f9f3e4ffe2f5fdfdf1fee5f5fcf2e5e2f2f1feffd0f7fdf1f9fcbef3fffd">[email&#160;protected]</span></span>
+                        <span>Open form</span>
                     </div>
-                </a>
+                </button>
 
-                <a href="/cdn-cgi/l/email-protection#fc8a959f88938e9991919d928999909e898e9e9d9293bc93898890939397d29f9391" class="contact-link-item">
+                <button type="button" class="contact-link-item" data-contact-recipient="victoremmanuelburbano@outlook.com" data-contact-label="Outlook" aria-label="Open Outlook contact form">
                     <div class="contact-icon">
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </div>
                     <div class="contact-detail">
                         <strong>Outlook</strong>
-                        <span><span class="__cf_email__" data-cfemail="11677872657e63747c7c707f64747d73646373707f7e517e64657d7e7e7a3f727e7c">[email&#160;protected]</span></span>
+                        <span>Open form</span>
                     </div>
-                </a>
+                </button>
 
                 <a href="https://www.linkedin.com/in/victor-emmanuel-burbano-984573371" target="_blank" class="contact-link-item">
                     <div class="contact-icon">
@@ -984,14 +1153,180 @@
         </div>
     </section>
 
+    <div class="contact-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <div class="contact-modal-backdrop" data-contact-modal-backdrop></div>
+        <div class="contact-modal-content" role="document">
+            <div class="contact-modal-header">
+                <div>
+                    <p class="contact-modal-label">Contact</p>
+                    <h3 class="contact-modal-title" id="contact-modal-title" data-contact-modal-title>Send a message</h3>
+                </div>
+                <button type="button" class="contact-modal-close" data-contact-modal-close aria-label="Close contact form">X</button>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                    <div class="contact-field">
+                        <label for="contact-name">Name</label>
+                        <input id="contact-name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-email">Email</label>
+                        <input id="contact-email" name="email" type="email" placeholder="Your email" autocomplete="email" required />
+                    </div>
+                </div>
+                <div class="contact-field">
+                    <label for="contact-subject">Subject</label>
+                    <input id="contact-subject" name="subject" type="text" placeholder="Project inquiry" required />
+                </div>
+                <div class="contact-field">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" placeholder="Tell me about your idea..." required></textarea>
+                </div>
+                <div class="contact-form-actions">
+                    <button type="submit" class="btn-primary">Send Message</button>
+                    <button type="button" class="btn-outline" data-contact-modal-close>Cancel</button>
+                </div>
+                <p class="contact-status" id="contact-status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+     
     <!-- FOOTER -->
     <footer class="footer">
         <p>© 2025 Victor Emmanuel Burbano. All rights reserved.</p>
         <div class="footer-dot"></div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
+        const contactApiUrl = 'https://YOUR-BACKEND-DOMAIN.vercel.app/api/send-email';
+        const contactModal = document.querySelector('.contact-modal');
+        const contactModalTitle = contactModal?.querySelector('[data-contact-modal-title]');
+        const contactModalBackdrop = contactModal?.querySelector('[data-contact-modal-backdrop]');
+        const contactModalCloseButtons = contactModal?.querySelectorAll('[data-contact-modal-close]');
+        const contactRecipientButtons = document.querySelectorAll('[data-contact-recipient]');
+        const contactForm = document.querySelector('#contact-form');
+        const contactStatus = document.querySelector('#contact-status');
+        const contactNameInput = document.querySelector('#contact-name');
+        let activeContactRecipient = '';
+        let activeContactLabel = '';
+        const contactApiConfigured = contactApiUrl && !contactApiUrl.includes('YOUR-BACKEND-DOMAIN');
+
+        const setContactStatus = (message, isError = false) => {
+            if (!contactStatus) {
+                return;
+            }
+
+            contactStatus.textContent = message;
+            contactStatus.style.color = isError ? '#f87171' : 'var(--accent)';
+        };
+
+        const openContactModal = (recipient, label) => {
+            if (!contactModal || !contactForm) {
+                return;
+            }
+
+            activeContactRecipient = recipient;
+            activeContactLabel = label;
+            contactModalTitle.textContent = `Send via ${label}`;
+            contactModal.classList.add('open');
+            contactModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            contactForm.reset();
+            setContactStatus(`Ready to send via ${label}.`);
+            window.setTimeout(() => {
+                contactNameInput?.focus();
+            }, 50);
+        };
+
+        const closeContactModal = () => {
+            if (!contactModal) {
+                return;
+            }
+
+            contactModal.classList.remove('open');
+            contactModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        };
+
+        contactRecipientButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                openContactModal(button.dataset.contactRecipient || '', button.dataset.contactLabel || 'Email');
+            });
+        });
+
+        contactModalBackdrop?.addEventListener('click', closeContactModal);
+        contactModalCloseButtons?.forEach((button) => button.addEventListener('click', closeContactModal));
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && contactModal?.classList.contains('open')) {
+                closeContactModal();
+            }
+        });
+
+        if (contactForm && contactStatus) {
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const formData = new FormData(contactForm);
+                const name = String(formData.get('name') || '').trim();
+                const email = String(formData.get('email') || '').trim();
+                const subject = String(formData.get('subject') || '').trim();
+                const message = String(formData.get('message') || '').trim();
+
+                if (!activeContactRecipient) {
+                    setContactStatus('Choose Gmail or Outlook first.', true);
+                    return;
+                }
+
+                if (!name || !email || !subject || !message) {
+                    setContactStatus('Please fill out every field first.', true);
+                    return;
+                }
+
+                if (!contactApiConfigured) {
+                    setContactStatus('Set the backend API URL first.', true);
+                    return;
+                }
+
+                setContactStatus(`Sending via ${activeContactLabel}...`);
+
+                try {
+                    const response = await fetch(contactApiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            recipient: activeContactRecipient,
+                            recipientLabel: activeContactLabel,
+                            name,
+                            email,
+                            subject,
+                            message,
+                        }),
+                    });
+
+                    let responseData = {};
+                    try {
+                        responseData = await response.json();
+                    } catch (error) {
+                        responseData = {};
+                    }
+
+                    if (!response.ok) {
+                        throw new Error(responseData.error || 'Failed to send message.');
+                    }
+
+                    contactForm.reset();
+                    setContactStatus(`Message sent via ${activeContactLabel}.`);
+                    window.setTimeout(closeContactModal, 900);
+                } catch (error) {
+                    console.error('Contact send failed:', error);
+                    setContactStatus(error.message || 'Something went wrong. Please try again.', true);
+                }
+            });
+        }
+
         /* -- Navbar hide/show ------------------------------ */
         const navbar = document.querySelector('.navbar');
         const navbarTrigger = document.querySelector('.navbar-trigger');
