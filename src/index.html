@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VEB</title>
+    <title>Victor Emmanuel Burbano | Web &amp; Mobile Developer</title>
+    <meta name="description" content="Victor Emmanuel Burbano is a BS Information Technology graduate and web and mobile developer based in Caloocan City, Philippines. Open to entry-level software engineering and IT roles." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,7 +217,7 @@
             font-family: var(--font-head);
             font-size: clamp(1.4rem, 3vw, 2.2rem);
             font-weight: 600;
-            color: var(--muted);
+            color: #94a3b8;
             margin-bottom: 24px;
             letter-spacing: -0.02em;
             opacity: 0;
@@ -486,6 +487,20 @@
             line-height: 1.6;
             flex: 1;
             text-indent: 0 !important;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 14px;
+        }
+        .project-tag {
+            border: 1px solid rgba(56,189,248,0.2);
+            border-radius: 999px;
+            padding: 4px 9px;
+            color: #bae6fd;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
         }
         .project-link {
             margin-top: 18px;
@@ -893,10 +908,10 @@
                 </div>
             </div>
             <div class="hero-text">
-                <p class="hero-tag">Web and App Developer</p>
+                <p class="hero-tag">BS IT Graduate · Web &amp; Mobile Developer</p>
                 <h1 class="hero-name">Hi, I'm <span class="highlight">Victor</span></h1>
                 <p class="hero-role">I build Web and Mobile Applications</p>
-                <p class="hero-desc">I'm a web and app developer who enjoys creating responsive, user-friendly experiences. I've built Talkaroo, a school-focused app for English vocabulary learning and speech evaluation with Azure AI Speech.</p>
+                <p class="hero-desc">Caloocan City, Philippines · Open to entry-level Associate Software Engineer, IT Support, and Help Desk roles.</p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn-primary">View Projects</a>
                     <a href="#contactinfo" class="btn-outline">Get In Touch</a>
@@ -913,26 +928,26 @@
         <h2 class="section-title">A little about me</h2>
         <div class="about-grid">
             <div>
-                <p>I'm a web and app developer interested in building useful, easy-to-use digital experiences across web and mobile. My projects include Talkaroo, a school-focused app that supports English vocabulary learning and speech evaluation using Azure AI Speech.</p>
+                <p>I'm a BS Information Technology graduate based in Caloocan City, Philippines, seeking entry-level opportunities in software engineering and IT support. I enjoy building practical web and mobile applications and solving problems with technology.</p>
                 <br>
-                <p>I work with technologies including HTML, CSS, JavaScript, TypeScript, React, and Flutter, and I'm always learning new ways to turn ideas into thoughtful, accessible products.</p>
+                <p>I'm the full-stack lead developer for TALK-A-ROO, an AI-assisted vocabulary and pronunciation-learning app for young learners. I lead development across the app's web and mobile experiences and work on its Azure AI Speech integration. My other projects include a coffee shop landing page and an interactive web page created for a lab exercise.</p>
             </div>
             <div class="about-stats">
                 <div class="stat-card">
-                    <div class="num">2+</div>
-                    <div class="label">Years learning</div>
+                    <div class="num">BS IT</div>
+                    <div class="label">Graduate</div>
                 </div>
                 <div class="stat-card">
-                    <div class="num">8</div>
-                    <div class="label">Technologies</div>
+                    <div class="num">Lead</div>
+                    <div class="label">TALK-A-ROO developer</div>
                 </div>
                 <div class="stat-card">
-                    <div class="num">3+</div>
-                    <div class="label">Projects built</div>
+                    <div class="num">3</div>
+                    <div class="label">Featured projects</div>
                 </div>
                 <div class="stat-card">
-                    <div class="num">∞</div>
-                    <div class="label">Curiosity</div>
+                    <div class="num">Open</div>
+                    <div class="label">To entry-level roles</div>
                 </div>
             </div>
         </div>
@@ -977,6 +992,14 @@
                 <div class="skill-icon">FL</div>
                 <span class="skill-name">Flutter</span>
             </div>
+            <div class="skill-item">
+                <div class="skill-icon">PY</div>
+                <span class="skill-name">Python</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon">AS</div>
+                <span class="skill-name">Android Studio</span>
+            </div>
         </div>
     </section>
 
@@ -989,11 +1012,13 @@
         <div class="projects-grid">
 
             <button type="button" class="project-card" data-project
-                data-title="Talkaroo"
-                data-desc="A school-focused app for English vocabulary learning and speech evaluation. It uses Azure AI Speech / ASR and visual learning to help learners recognize real-world objects."
+                data-title="TALK-A-ROO"
+                data-desc="TALK-A-ROO is an AI-assisted vocabulary and pronunciation-learning app for young learners. As the full-stack lead developer, I lead development across its web and mobile experiences and work on integrating Azure AI Speech for speech evaluation."
                 data-img="Pictures/Talkaroo.png"
                 data-link="https://talkaroo.me"
                 data-link-label="View Project"
+                data-github="https://github.com/vctrmmnlbrbn"
+                data-github-label="GitHub Profile"
                 aria-label="Open details for Talkaroo">
                 <div class="project-img-wrap">
                     <img src="Pictures/Talkaroo.png" alt="Talkaroo app" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
@@ -1003,8 +1028,9 @@
                 </div>
                 <div class="project-body">
                     <p class="project-num">project_01</p>
-                    <h4 class="project-title">Talkaroo</h4>
-                    <p class="project-desc">A school-focused app for English vocabulary learning and speech evaluation using Azure AI Speech / ASR.</p>
+                    <h4 class="project-title">TALK-A-ROO</h4>
+                    <p class="project-desc">AI-assisted vocabulary and pronunciation learning for young learners. Full-stack lead developer.</p>
+                    <div class="project-tags"><span class="project-tag">Flutter</span><span class="project-tag">Azure AI Speech</span></div>
                     <div class="project-link">
                         Open details
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1013,22 +1039,25 @@
             </button>
 
             <button type="button" class="project-card" data-project
-                data-title="Project Two"
-                data-desc="A brief description of what this project does and the technologies used to build it. <a href='https://github.com/vctrmmnlbrbn/myCoffeeTemplate' class='project-link' target='_blank'>See more...</a>"
+                data-title="Ember &amp; Ground: Coffee Shop Landing Page"
+                data-desc="A coffee shop landing page presenting a branded shop experience. Built with HTML, CSS, and JavaScript."
                 data-img="Pictures/kopiko.jpg"
                 data-link="https://vctrmmnlbrbn.github.io/myCoffeeTemplate/"
                 data-link-label="View Project"
-                aria-label="Open details for Project Two">
+                data-github="https://github.com/vctrmmnlbrbn/myCoffeeTemplate"
+                data-github-label="View GitHub Repository"
+                aria-label="Open details for Ember and Ground">
                 <div class="project-img-wrap">
-                    <img src="Pictures/kopiko.jpg" alt="Project Two" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <img src="Pictures/kopiko.jpg" alt="Ember and Ground coffee shop landing page preview" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                     <div class="project-placeholder" style="display:none">
                         <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
                     </div>
                 </div>
                 <div class="project-body">
                     <p class="project-num">project_02</p>
-                    <h4 class="project-title">Project My Coffee Template</h4>
-                    <p class="project-desc">I made this project as a showcase template for a coffee shop.</p>
+                    <h4 class="project-title">Ember &amp; Ground: Coffee Shop Landing Page</h4>
+                    <p class="project-desc">A coffee shop landing page presenting a branded shop experience.</p>
+                    <div class="project-tags"><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">JavaScript</span></div>
                     <div class="project-link">
                         Open details
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1038,10 +1067,12 @@
 
             <button type="button" class="project-card" data-project
                 data-title="Valentine Proposal"
-                data-desc="A brief description of what this project does and the technologies used to build it. <a href='https://github.com/vctrmmnlbrbn/valentine-proposal' class='project-link' target='_blank'>See more...</a>"
+                data-desc="A small interactive web page built for a lab exercise, using HTML, CSS, and JavaScript."
                 data-img="Pictures/valentine.png"
                 data-link="https://vctrmmnlbrbn.github.io/valentine-proposal/"
                 data-link-label="View Project"
+                data-github="https://github.com/vctrmmnlbrbn/valentine-proposal"
+                data-github-label="View GitHub Repository"
                 aria-label="Open details for Valentine Proposal">
                 <div class="project-img-wrap">
                     <img src="Pictures/valentine.png" alt="Valentine Proposal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
@@ -1052,7 +1083,8 @@
                 <div class="project-body">
                     <p class="project-num">project_03</p>
                     <h4 class="project-title">Valentine Proposal</h4>
-                    <p class="project-desc">This is a troll project based from my subject's Lab Exercise</p>
+                    <p class="project-desc">A small interactive web page built for a lab exercise.</p>
+                    <div class="project-tags"><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">JavaScript</span></div>
                     <div class="project-link">
                         Open details
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1082,6 +1114,7 @@
                     <p class="project-modal-desc" data-modal-desc></p>
                     <div class="project-modal-actions">
                         <a class="btn-primary project-modal-link" data-modal-link target="_blank" rel="noreferrer">Open project</a>
+                        <a class="btn-outline project-modal-github" data-modal-github target="_blank" rel="noreferrer">GitHub</a>
                         <button type="button" class="btn-outline project-modal-close" data-modal-close>Close</button>
                     </div>
                 </div>
@@ -1096,7 +1129,7 @@
         <p class="section-label">04 — Contact</p>
         <h2 class="section-title">Let's work together</h2>
         <div class="contact-wrapper">
-            <p class="contact-intro">I'm currently open to new opportunities and collaborations. Whether you have a project in mind, a question, or just want to say hi — my inbox is always open.</p>
+            <p class="contact-intro">I'm open to entry-level Associate Software Engineer, IT Support, and Help Desk roles. Feel free to reach out about an opportunity or collaboration.</p>
             
             <div class="contact-links">
 
@@ -1130,6 +1163,16 @@
                     </div>
                 </a>
 
+                <a href="https://github.com/vctrmmnlbrbn" target="_blank" rel="noreferrer" class="contact-link-item">
+                    <div class="contact-icon">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </div>
+                    <div class="contact-detail">
+                        <strong>GitHub</strong>
+                        <span>vctrmmnlbrbn</span>
+                    </div>
+                </a>
+
                 <a href="https://www.facebook.com/vctrmmnlbrbn" target="_blank" class="contact-link-item">
                     <div class="contact-icon">
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -1139,16 +1182,6 @@
                         <span>vctrmmnlbrbn</span>
                     </div>
                 </a>
-
-                <div class="contact-link-item">
-                    <div class="contact-icon">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.4 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <div class="contact-detail">
-                        <strong>Phone / Viber</strong>
-                        <span>+63 968 792 9419</span>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -1373,6 +1406,7 @@
             const modalImage = projectModal.querySelector('[data-modal-image]');
             const modalPlaceholder = projectModal.querySelector('[data-modal-placeholder]');
             const modalLink = projectModal.querySelector('[data-modal-link]');
+            const modalGithubLink = projectModal.querySelector('[data-modal-github]');
             const modalCloseButtons = projectModal.querySelectorAll('[data-modal-close]');
             const modalBackdrop = projectModal.querySelector('[data-modal-backdrop]');
 
@@ -1382,6 +1416,8 @@
                 const img = card.dataset.img || '';
                 const link = card.dataset.link || '';
                 const linkLabel = card.dataset.linkLabel || 'Open project';
+                const githubLink = card.dataset.github || '';
+                const githubLinkLabel = card.dataset.githubLabel || 'GitHub';
 
                 modalTitle.textContent = title;
                 modalDesc.innerHTML = desc;
@@ -1404,6 +1440,15 @@
                 } else {
                     modalLink.removeAttribute('href');
                     modalLink.style.display = 'none';
+                }
+
+                if (githubLink) {
+                    modalGithubLink.href = githubLink;
+                    modalGithubLink.textContent = githubLinkLabel;
+                    modalGithubLink.style.display = 'inline-flex';
+                } else {
+                    modalGithubLink.removeAttribute('href');
+                    modalGithubLink.style.display = 'none';
                 }
 
                 projectModal.classList.add('open');
