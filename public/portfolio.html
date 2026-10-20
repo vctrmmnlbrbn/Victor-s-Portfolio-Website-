@@ -1194,11 +1194,15 @@
      
     <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 Victor Emmanuel Burbano. All rights reserved.</p>
+        <p>© <span data-current-year></span> Victor Emmanuel Burbano. All rights reserved.</p>
         <div class="footer-dot"></div>
     </footer>
 
     <script>
+        document.querySelectorAll('[data-current-year]').forEach((element) => {
+            element.textContent = new Date().getFullYear();
+        });
+
         const contactApiUrl = '/api/send';
         const contactModal = document.querySelector('.contact-modal');
         const contactModalTitle = contactModal?.querySelector('[data-contact-modal-title]');
